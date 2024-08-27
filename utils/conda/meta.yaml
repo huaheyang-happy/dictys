@@ -17,6 +17,7 @@ build:
     set -eo pipefail
     {{ PYTHON }} -m pip install https://files.pythonhosted.org/packages/2d/32/af556f3fb5e517ce58b17daa4c7f33140042adfc85d9c7db35c5f1779c10/pyDataverse-0.3.1-py3-none-any.whl
     {{ PYTHON }} -m pip install --no-deps --ignore-installed .
+    {{ PYTHON }} -m pip install docstring2argparse
     #Correcting matplotlib version due to pyDNase dependency
     {{ PYTHON }} -m pip uninstall -y pyDNase &> /dev/null || true
     {{ PYTHON }} -m pip install -U matplotlib &> /dev/null || true
